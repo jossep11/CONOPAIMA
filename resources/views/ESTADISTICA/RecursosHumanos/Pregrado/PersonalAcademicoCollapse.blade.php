@@ -18,9 +18,9 @@
                 <div class="barra">
                 <h1 id="tablax">Tabla de Datos del Personal Académico</h1>    
                 <!-- Button trigger modal -->
-                @role("user")
+                {{-- @role("user") --}}
                 <a href="#" class="btn_agregar_azul" data-toggle="modal" data-target="#AgregarPersonalAcademico"> <i class="fas fa-plus"></i> <div> Añadir nuevo</div></a>
-                @endrole
+                {{-- @endrole --}}
                 </div>
             </div>
 
@@ -176,9 +176,9 @@
                         <th>Título Académico</th>
                         <th>Profesión</th>
                         <th>Adscripción</th>
-                        @role("user")
+                        {{-- @role("user") --}}
                         <th>Acciones</th>
-                        @endrole
+                        {{-- @endrole --}}
                     </tr>
                 </thead>
                 {{--database data subtraction --}}
@@ -208,7 +208,7 @@
                         <td>{{$P_Academico->Profesion}}</td>
                         <td>{{$P_Academico->Adscripcion}}</td>                   
                     
-                    @role("user")
+                    {{-- @role("user") --}}
                     <td>
                         <form class="eliminar_P_Academico_Pregrado" action="{{route ('pa_pregrado.destroy', $P_Academico->id)}}" method="POST">
                         <div class="form-button-action">    
@@ -225,7 +225,7 @@
                         </form>
         
                     </td>
-                    @endrole
+                    {{-- @endrole --}}
 
 
                 </tr>

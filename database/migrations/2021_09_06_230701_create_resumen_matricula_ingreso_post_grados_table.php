@@ -15,6 +15,11 @@ class CreateResumenMatriculaIngresoPostGradosTable extends Migration
     {
         Schema::create('resumen_matricula_ingreso_post_grados', function (Blueprint $table) {
             $table->id();
+            $table->string('Nombre_PostGrado');
+            $table->string('TipoPostgrado');
+            $table->string('N_IngresosP');
+            $table->string('C_ProsecucionP');
+            $table->string('C_EgresadosP');
             $table->timestamps();
         });
     }

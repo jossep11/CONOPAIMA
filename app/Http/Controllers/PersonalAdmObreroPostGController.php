@@ -131,7 +131,7 @@ class PersonalAdmObreroPostGController extends Controller
     public function export2()  
     {
         
-        return Excel::download(new Postgradoo, 'Personal_Postgrado.xlsx');
+      //  return Excel::download(new Postgradoo, 'Personal_Postgrado.xlsx');
     }
 
 }

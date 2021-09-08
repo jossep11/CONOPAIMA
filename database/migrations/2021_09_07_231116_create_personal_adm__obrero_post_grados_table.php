@@ -14,6 +14,7 @@ class CreatePersonalAdmObreroPostGradosTable extends Migration
     public function up()
     {
         Schema::create('personal_adm__obrero_post_grados', function (Blueprint $table) {
+            $table->id();
             $table->string('InputCod_InstitucionA_O');
             $table->string('pais_p_academicoA_O');
             $table->string('Documento_IDA_O');

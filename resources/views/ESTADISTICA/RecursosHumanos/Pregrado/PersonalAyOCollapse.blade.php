@@ -17,9 +17,9 @@
                 <div class="barra">
                 <h1 id="TablePersonalAO" >Tabla de Datos del Personal Administrativo y Obrero</h1>    
                 <!-- Button trigger modal -->
-                @role("user")
+                {{-- @role("user") --}}
                 <a href="#" class="btn_agregar_azul" data-toggle="modal" data-target="#AgregarAdmyObrero"> <i class="fas fa-plus"></i> <div> Añadir nuevo</div></a>
-                @endrole
+                {{-- @endrole --}}
                 </div>
             </div>
 
@@ -180,9 +180,9 @@
                         <th>Profesión</th>
                         <th>Ocupación</th>
                         <th>Capacitación</th>
-                        @role("user")
+                        {{-- @role("user") --}}
                         <th>Acciones</th>
-                        @endrole
+                        {{-- @endrole --}}
                     </tr>
                 </thead>
                 {{--database data subtraction --}}
@@ -212,7 +212,7 @@
                         <td>{{$P_Adm_Obrero->OcupacionA_O}}</td>
                         <td>{{$P_Adm_Obrero->CapacitacionA_O}}</td>
 
-                    @role("user")
+                    {{-- @role("user") --}}
                      <td>
                         <form class="eliminar_P_Adm_Obrero_Pregrado" action="{{route ('pao_pregrado.destroy', $P_Adm_Obrero->id)}}" method="POST">
                         <div class="form-button-action">    
@@ -229,7 +229,7 @@
                         </form>
         
                     </td>
-                    @endrole
+                    {{-- @endrole --}}
 
 
                 </tr>

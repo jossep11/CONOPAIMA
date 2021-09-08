@@ -15,6 +15,10 @@ class CreateResumenMatriculaIngresoPreGradosTable extends Migration
     {
         Schema::create('resumen_matricula_ingreso_pre_grados', function (Blueprint $table) {
             $table->id();
+            $table->string('Nombre_Carrera');
+            $table->string('N_Ingresos');
+            $table->string('C_Prosecucion');
+            $table->string('C_Egresados');
             $table->timestamps();
         });
     }

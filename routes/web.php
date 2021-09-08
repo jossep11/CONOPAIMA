@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\Proyecto1Controller;
 use Illuminate\Support\Facades\Route;
 //POA CONTROLLERS
+use App\Http\Controllers\Proyecto1Controller;
 use App\Http\Controllers\ObjetivoGeneralProyecto;
 use App\Http\Controllers\Datos_Responsables_UserController;
 use App\Http\Controllers\ResumenM_I_P_EPreGrado_InstitutoController;
