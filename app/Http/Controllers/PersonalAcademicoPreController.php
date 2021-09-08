@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Exports\ProductsExport;
 use Illuminate\Http\Request;
 use App\Models\PersonalAcademico;
-use App\Exports\UsersExport;
+use App\Exports\RecursosHumanos_Pregrado;
 use App\Models\PersonalAdm_Obrero;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -144,7 +144,7 @@ class PersonalAcademicoPreController extends Controller
 
     public function export()  
     {
-        return Excel::download(new ProductsExport, 'Personal_Pregrado.xlsx');
+        return Excel::download(new RecursosHumanos_Pregrado, 'Personal_Pregrado.xlsx');
     }
 
 

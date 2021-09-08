@@ -55,9 +55,9 @@ Route::post('/addingpersonalacademicopostg', [PersonalAcademicoPostGController::
 Route::post('/addinadmpost', [PersonalAdmObreroPostGController::class, 'store'])->name('add.admpost');
 
 //Excel Report Personal academico y obrero PREGRADO
-//Route::get('/Reporte_Pregrado', [PersonalAcademicoPreController::class, 'export'])->name('export.x');
+Route::get('/Reporte_Pregrado', [PersonalAcademicoPreController::class, 'export'])->name('export.x');
 //Excel Report Personal Academico y Obrero POSTGRADO
-//Route::get('/Reporte_Postgrado', [PersonalAdmObreroPostGController::class, 'export2'])->name('export.post');
+Route::get('/Reporte_Postgrado', [PersonalAdmObreroPostGController::class, 'export2'])->name('export.post');
 //-----------------------------------------------------------------------------------------------
 
 

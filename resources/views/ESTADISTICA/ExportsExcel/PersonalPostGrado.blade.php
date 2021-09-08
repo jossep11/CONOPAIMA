@@ -9,7 +9,7 @@
         </th>
         <th>
             <strong>
-                Descargado por: {{ $user = auth()->user()->name }}
+                {{-- Descargado por: {{ $user = auth()->user()->name }} --}}
             </strong>
         </th>
      

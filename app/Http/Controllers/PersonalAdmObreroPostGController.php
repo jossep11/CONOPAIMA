@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Exports;
-use App\Exports\Postgradoo;
+use App\Exports\RecursosHumanos_Postgrado;
 use App\Models\PersonalAdm_ObreroPostGrado;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -131,7 +131,7 @@ class PersonalAdmObreroPostGController extends Controller
     public function export2()  
     {
         
-      //  return Excel::download(new Postgradoo, 'Personal_Postgrado.xlsx');
+        return Excel::download(new RecursosHumanos_Postgrado, 'Personal_Postgrado.xlsx');
     }
 
 }
