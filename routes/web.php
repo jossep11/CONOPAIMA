@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BandejaEntrada;
 use Illuminate\Support\Facades\Route;
 //POA CONTROLLERS
 use App\Http\Controllers\Proyecto1Controller;
@@ -62,6 +63,24 @@ Route::get('/Reporte_Postgrado', [PersonalAdmObreroPostGController::class, 'expo
 
 
 
+
+//3)EVALUACION ROUTES-----------------------------------------------------------------------------
+//ADMIN analysis matrix Insertion
+Route::resource('matriz_analisis_admin', 'App\Http\Controllers\MatrizAnalisisAdminController'); /* ->middleware('role:Admin') */ //First admin route
+
+//ADMIN Inbox
+Route::resource('bandeja_entrada', BandejaEntrada::class);/* ->middleware('role:Administrador') */ //Second admin route
+
+//Users, make matrix
+Route::resource('formarmatriz', 'App\Http\Controllers\MatrizAnalisisEnviar');/* ->middleware('role:Usuario') */ //first user route
+
+//Routes of Data Insertion
+Route::resource('fortaleza', 'App\Http\Controllers\FortalezaController');
+Route::resource('oportunidades', 'App\Http\Controllers\OportunidadesController');
+Route::resource('amenazas', 'App\Http\Controllers\AmezanasController');
+Route::resource('debilidades', 'App\Http\Controllers\DebilidadesController');
+
+//------------------------------------------------------------------------------------------------
 Route::get('/', function () {
     return view('POA.POALayout');
 });
