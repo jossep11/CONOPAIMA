@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\LastUserExport;
-use App\Exports\UsersExport;
+use App\Exports\LastMatrizUser;
+use App\Exports\MatrizMadeByUser;
 use App\Models\Bandeja_Entrada;
 use App\Models\Operacion;
 use App\Models\User;
@@ -22,7 +22,9 @@ class BandejaEntrada extends Controller
     {
         
         $operacion = DB::table('operacions')
-        ->join('users', 'operacions.id_user', '=', 'users.id')->get(['users.name', 'users.Nombre_Direccion', 'operacions.id', 'operacions.created_at' ]);
+        ->join('users', 'operacions.id_user', '=', 'users.id')
+        ->orderBy('created_at', 'desc')
+        ->get(['users.name', 'users.Nombre_Direccion', 'operacions.id', 'operacions.created_at' ]);
                                                                                                                                         
 
        return view('Evaluacion.admin.BandejaEntrada')->with('operacion', $operacion);
@@ -95,7 +97,7 @@ class BandejaEntrada extends Controller
     $eliminarOperacion= Operacion::find($id);
     $eliminarOperacion->delete();
     //$eliminarfromBandejaEntrada = Bandeja_Entrada::find($id);
-    $eliminarfromBandejaEntrada = DB::table('bandeja__entradas')->where('ID_Operacion', $id)->delete();
+    //$eliminarfromBandejaEntrada = DB::table('bandeja__entradas')->where('ID_Operacion', $id)->delete();
     return redirect('/bandeja_entrada');
     }
 
@@ -111,7 +113,8 @@ class BandejaEntrada extends Controller
         $boton= $request->get('boton');
        // dd($this->$boton);
        //return Excel::download(new UsersExport, 'POA.xlsx');
-        return Excel::download(new UsersExport($boton), 'Evaluacion.xlsx');
+
+        return Excel::download(new MatrizMadeByUser($boton), 'Evaluacion.xlsx'); 
     }
 
     public function exportLastOne(request $request)  
@@ -120,7 +123,8 @@ class BandejaEntrada extends Controller
        // dd($this->$boton);
        //return Excel::download(new UsersExport, 'POA.xlsx');
         //return Excel::download(new UsersExport($boton), 'Evaluacion.xlsx');
-        return Excel::download(new LastUserExport, 'UsuarioEvaluacion.xlsx');
+
+        return Excel::download(new LastMatrizUser, 'UsuarioEvaluacion.xlsx'); 
     }
     
 

@@ -37,12 +37,12 @@
 
                            <td class="colun10">{{$item->name}}-{{$item->Nombre_Direccion}}</td>
                             
-                            <td>{{date('d-m-Y', strtotime($item->created_at)) }}</td>
+                            <td>{{/* date('d-m-Y', strtotime($item->created_at)) */ $item->created_at }}</td>
 
                             <td>
                                 <div class="barra___">
                                 
-                               <form id="prubz" action="{{ route('export.x'), $item->id }}" method="GET">
+                               <form id="prubz" action="{{ route('exportMatrix.Evaluacion'), $item->id }}" method="GET">
                                 
                                 
                                @csrf 

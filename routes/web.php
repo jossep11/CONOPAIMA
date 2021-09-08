@@ -41,7 +41,7 @@ Route::resource('ResumenMatriculaPostGrado', ResumenM_I_P_EPostGrado_InstitutoCo
 Route::resource('ResumenMatriculaPreGrado', ResumenM_I_P_EPreGrado_InstitutoController::class);
 Route::resource('ObjetivoGeneral', ObjetivoGeneralProyecto::class);
 //export excel POA
-Route::get('/reporte_xlsx', [Proyecto1Controller::class, 'export'])->name('export.x');
+Route::get('/ReportePOA_xlsx', [Proyecto1Controller::class, 'export'])->name('export.x');
 //POA END--------------------------------------------------------------------------------------
 
 
@@ -85,6 +85,12 @@ Route::resource('fortaleza', 'App\Http\Controllers\FortalezaController');
 Route::resource('oportunidades', 'App\Http\Controllers\OportunidadesController');
 Route::resource('amenazas', 'App\Http\Controllers\AmezanasController');
 Route::resource('debilidades', 'App\Http\Controllers\DebilidadesController');
+
+//Excel Report Matrix
+Route::get('/reporte_xlsx', [BandejaEntrada::class, 'export'])->name('exportMatrix.Evaluacion');
+//Excel Report, Last Matrix
+Route::get('/LastUserMatrix', [BandejaEntrada::class, 'exportLastOne'])->name('user_report.x');
+
 
 //------------------------------------------------------------------------------------------------
 Route::get('/', function () {

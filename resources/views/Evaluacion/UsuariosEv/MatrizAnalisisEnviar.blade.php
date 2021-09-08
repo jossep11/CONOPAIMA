@@ -13,7 +13,7 @@
       
             <div class="barra">
             <h1 >Matriz de Análisis</h1>    
-            <a href="/userreporte_xlsx" class="">  <i class="fas fa-file-pdf">   Generar XLSX </i></a>
+            <a href="/LastUserMatrix" class="">  <i class="fas fa-file-pdf">   Generar XLSX </i></a>
             </div>
  
             <form class="enviandoF" action="{{route ('formarmatriz.store')}}" method="POST">

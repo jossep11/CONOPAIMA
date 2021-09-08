@@ -9,7 +9,6 @@
     
 </head>
 <body>  
-
             <main>
                     <div class="texto_principal">
                         <h1>CONOPAIMA</h1>
@@ -34,14 +33,6 @@
                                 <button type="submit">Entrar</button>
                             </form>
                 </main>
-
             </form>
-
-        
-
-
-
-
-
 </body>
 </html>
