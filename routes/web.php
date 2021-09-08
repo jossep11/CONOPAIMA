@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\BandejaEntrada;
 use Illuminate\Support\Facades\Route;
 //POA CONTROLLERS
 use App\Http\Controllers\Proyecto1Controller;
@@ -14,6 +13,12 @@ use App\Http\Controllers\PersonalAcademicoPreController;
 use App\Http\Controllers\PersonalAdministratObreroPreController;
 use App\Http\Controllers\PersonalAcademicoPostGController;
 use App\Http\Controllers\PersonalAdmObreroPostGController;
+
+//EVALUACION CONTROLLERS
+use App\Http\Controllers\BandejaEntrada;
+
+//Login de prueba
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +30,9 @@ use App\Http\Controllers\PersonalAdmObreroPostGController;
 |
 */
 //Jossep Paredes->jossep11
+
+//Login de prueba
+Route::resource('login', LoginController::class)->middleware('guest');
 
 //1) POA ROUTES------------------------------------------------------------------------------------
 Route::resource('proyecto', Proyecto1Controller::class); //Principal POA Route 
@@ -60,8 +68,6 @@ Route::get('/Reporte_Pregrado', [PersonalAcademicoPreController::class, 'export'
 //Excel Report Personal Academico y Obrero POSTGRADO
 Route::get('/Reporte_Postgrado', [PersonalAdmObreroPostGController::class, 'export2'])->name('export.post');
 //-----------------------------------------------------------------------------------------------
-
-
 
 
 //3)EVALUACION ROUTES-----------------------------------------------------------------------------
