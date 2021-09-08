@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="{{asset('js/core/jquery.3.2.1.min.js')}}"></script>
     
-   <meta name="csrf-token" content="{{ csrf_token() }}">
+   
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   
     
 
@@ -32,10 +33,10 @@
     @yield('css')
     <link rel="stylesheet" href="{{asset ('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{asset ('css/atlantis.css') }}">
-    <link rel="stylesheet" href="{{asset ('css/POA/POA_styles.css') }}">
+    <link rel="stylesheet" href="{{asset ('css/ESTADISITCA/Estadistica_styles.css') }}">
    
 
-    <title>CONOPAIMA </title>
+    <title>Estadística </title>
 </head>
 
 <body>
@@ -45,12 +46,12 @@
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="blue">
 
-                <a href="/proyecto"class="logo poa">
+                <a href="" class="logo">
+                
                     <img src="{{asset('logo1.png')}}" alt="logo" class="navbar-brand">
+                    <span>
                     CONOPAIMA
-                    {{-- 
-                    <img src="{{asset('img/logo.svg')}}" alt="navbar brand" class="navbar-brand">
-                     --}}
+                    </span>
                 </a>
                 <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -73,41 +74,36 @@
                 <div class="container-fluid">
                  
                     <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-                                     
+                    
+                
+                 
+                 
                         <li class="nav-item dropdown hidden-caret">
                             <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
                                 <div class="avatar-sm">
-                                    <i class="fas fa-caret-down logout"></i>                                    {{-- 
-                                    <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle"> --}}
+                                    <i class="fas fa-caret-down logout"></i>
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-user animated fadeIn">
                                 <div class="dropdown-user-scroll scrollbar-outer">
                                     <li>
                                         <div class="user-box">
-                                            {{-- 
-                                            <div class="avatar-lg"><img src="../assets/img/profile.jpg" alt="image profile" class="avatar-img rounded"></div>
-                                             --}}<i class="fa fa-user" ></i>
-
+                                            <i class="fa fa-user" ></i>  
                                             <div class="u-text">
-                                                <h4>Nombre de usuario</h4>
-                                                {{-- <h4>{{$user = auth()->user()->Nombres}}</h4> --}}
-                                                {{-- <p class="text-muted">{{$user = auth()->user()->email}}</p> --}}
-                                                {{-- 
-                                                <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
-                                                comment --}}
+                                               {{--  <h4>{{$user = auth()->user()->name}} {{$user = auth()->user()->Apellido}}</h4>
+                                                <p class="text-muted">{{$user = auth()->user()->email}}</p>  --}}
                                             </div>
                                         </div>
                                     </li>
                                     <li>
-                                        {{-- Cerrar Sesion --}}
+                                        
                                         {{-- <form  action="{{route("logout")}}" method="post">
                                         
-                                           @csrf
+                                            @csrf
+                                        
                                        
-                                      
-                                        <a class="dropdown-item" href="#" onclick="this.closest('form').submit()">Cerrar sesión</a>
-                                    </form> --}}
+                                         <a class="dropdown-item" href="#" onclick="this.closest('form').submit()">Cerrar sesión</a>
+                                     </form> --}}
                                     </li>
                                 </div>
                             </ul>
@@ -123,45 +119,39 @@
                 <div class="sidebar-content">
                     <div class="user">
                         <div class="avatar-sm float-left mr-2">
-                            <i class="fa fa-user" aria-hidden="true"></i>
-
-                            {{-- 
-                            
-                            <img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
-
-                             --}}
-
+                            <i class="fa fa-user" ></i>  
                         </div>
                         <div class="info">
                             <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                                 <span>
-                                   User Here
-                                   <br>
-                                   (Admin-User)
-                                    {{-- {{$user = auth()->user()->Nombres}}
+                                    User Here
+                                    <br>
+                                    (Admin-User)
+ {{--                               {{$user = auth()->user()->Nombres}}
                                     <br>
                                     @role('admin')
                                     Administrador
                                     @else
                                     Usuario
                                     @endrole --}}
-                                    
                                     {{--The next line show the user's name conected--}}
                                     {{-- <span class="user-level">{{$user = auth()->user()->name}}</span>--}}
                                 <span class="caret"></span>
                                 </span>
                             </a>
-                           
+                            <div class="clearfix"></div>
 
-                         
+                            <div class="collapse in" id="collapseExample">
+            
+                            </div>
                         </div>
                     </div>
 
                     <ul class="nav nav-primary">
                         <li class="nav-item active">
-                            <a class="text-align-center" href="" >
+                            <a class="text-align-center" href="javascript:void(0);" >
                                 <i class="fas fa-home"></i>
-                            <p class="ProcesoAnalitico">Plan Operativo Anual</p>
+                            <p class="ProcesoAnalitico">Estadística</p>
                             </a>
                        
                         </li>
@@ -170,20 +160,53 @@
                             <span class="sidebar-mini-icon">
                                 <i class="fa fa-ellipsis-h"></i>
                             </span>
-                            <h4 class="text-section">Components</h4>
+                            
                         </li>
 
 
                         {{-- @role('S_Admin|viewer') --}}
                                                   
                     <li class="nav-item ">
-                        <a href="/proyecto">
-                            <i class="fas fa-graduation-cap"></i>
-                            <p>Proyecto</p>
+                        <a data-toggle="collapse" href="#RecusosHumanos">
+                            <i class="fas fa-user-circle"></i>
+                            <p>VPDS</p>
                             <span class="caret"></span>
                         </a>
 
+                        <div class="collapse show" id="RecusosHumanos">
+                            <ul class="nav nav-collapse">
+
+                                <li>
+                                    <a data-toggle="collapse show" href="#">
+                                        <span class="sub-item">Recusos Humanos</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <div class="collapse show" id="subnav1">
+                                        <ul class="nav nav-collapse subnav">
+                                            <li>
+                                                <a href="/pa_pregrado">
+                                                    <span class="sub-item">Pregrado</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="/registro_p_postgrado">
+                                                    <span class="sub-item">Postgrado</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                              
+                            </ul>
+
+
+
+                        </div>
+                       
+    
+
                     </li>
+            
 
                         {{-- @endrole --}}
 
@@ -244,22 +267,11 @@
 
     <script src="{{asset('js/IdentificadorIndex.js')}}"></script>    
     
-    <script src="{{asset('js/POA/POA_validation.js')}}"></script>   
-    <script src="{{asset('js/POA/POA.js')}}"></script>   
-
-<script>
-       
-    $(window).on("load", function(){
-
-        $(".loader-center").fadeOut("slow");
-        $(".displaynone").fadeIn("slow", function() {
-            $(this).removeClass("displaynone");
-        });
+    <script src="{{asset('js/Estadistica/ESTADISTICA_validation.js')}}"></script>   
+    
+    <script src="{{asset('js/Estadistica/Estadistica.js')}}"></script>   
 
 
-    })
-
-</script>
 </body>
 
 </html>
