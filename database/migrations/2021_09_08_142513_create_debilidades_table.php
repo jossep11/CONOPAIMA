@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateResumenMatriculaIngresoPreGradosTable extends Migration
+class CreateDebilidadesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateResumenMatriculaIngresoPreGradosTable extends Migration
      */
     public function up()
     {
-        Schema::create('resumen_matricula_ingreso_pre_grados', function (Blueprint $table) {
+        Schema::create('debilidades', function (Blueprint $table) {
             $table->id();
-            $table->string('Nombre_Carrera');
-            $table->string('N_Ingresos');
-            $table->string('C_Prosecucion');
-            $table->string('C_Egresados');
+            $table->longText('description');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateResumenMatriculaIngresoPreGradosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resumen_matricula_ingreso_pre_grados');
+        Schema::dropIfExists('debilidades');
     }
 }

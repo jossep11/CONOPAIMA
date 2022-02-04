@@ -15,6 +15,14 @@ class CreateDatosResponsablesProyectosTable extends Migration
     {
         Schema::create('datos_responsables_proyectos', function (Blueprint $table) {
             $table->id();
+            $table->string('Responsables_Proyecto');
+            $table->string('Nombres');
+            $table->string('Apellidos');
+            $table->string('DocumentoIdentidad');
+            $table->string('Cedula_Pasaporte');
+            $table->string('Cargo');
+            $table->string('Correo');
+            $table->string('Telefono');            
             $table->timestamps();
         });
     }

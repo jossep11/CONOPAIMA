@@ -42,7 +42,7 @@ main{
 
 .caja__trasera{
     width: 100%;
-    padding: 30px 20px;
+    padding: 50px 20px;
     display: flex;
     justify-content: center;
     -webkit-backdrop-filter: blur(10px);
@@ -140,6 +140,7 @@ padding: 20px 20px 20px 400px;
 .formulario__login{
     opacity: 1;
     display: block;
+
 }
 .formulario__register{
     display: none;

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateObjetivoGeneralProyectosTable extends Migration
+class CreateFortalezasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateObjetivoGeneralProyectosTable extends Migration
      */
     public function up()
     {
-        Schema::create('objetivo_general_proyectos', function (Blueprint $table) {
+        Schema::create('fortalezas', function (Blueprint $table) {
             $table->id();
-            $table->longText('ObjetivoProyecto1');
-            $table->timestamps();
+            $table->longText('description');
+            $table->timestamps(); 
         });
     }
 
@@ -27,6 +27,6 @@ class CreateObjetivoGeneralProyectosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('objetivo_general_proyectos');
+        Schema::dropIfExists('fortalezas');
     }
 }
